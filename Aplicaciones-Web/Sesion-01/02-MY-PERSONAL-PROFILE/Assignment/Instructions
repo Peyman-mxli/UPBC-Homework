@@ -1,0 +1,377 @@
+Práctica Guiada: Creando "Mi Perfil
+Personal" con HTML5
+📋 Objetivo
+Crear una página web personal completa que incluya todos los elementos de HTML5:
+estructura semántica, metadatos, formularios y etiquetas de presentación.
+🎯 Lo que vamos a construir
+● Una página web personal con secciones: Sobre mí, Habilidades, Proyectos y
+Contacto
+● Navegación funcional entre secciones
+● Formulario completo de contacto
+● Estructura HTML5 semántica
+● Metadatos completos
+
+PASO 1: Creando la estructura básica
+Instrucción: Abre tu editor de código y crea un archivo llamado miperfil.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Perfil personal de [Tu Nombre] - Estudiante de
+programación web">
+<meta name="author" content="[Tu Nombre]">
+<title>[Tu Nombre] - Mi Perfil Personal</title>
+</head>
+<body>
+<!-- Aquí construiremos todo el contenido -->
+</body>
+</html>
+
+¿Qué acabamos de hacer?
+● <!DOCTYPE html>: Le dice al navegador que es HTML5
+● lang="es": Define el idioma como español
+● Los metadatos dan información sobre nuestra página
+● [Tu Nombre] debe reemplazarse con tu nombre real
+
+PASO 2: Añadiendo la estructura semántica
+Instrucción: Dentro del <body>, vamos a crear la estructura semántica:
+<body>
+<header>
+<h1>¡Hola! Soy [Tu Nombre]</h1>
+<p>Estudiante de Programación Web</p>
+<nav>
+<ul>
+<li><a href="#sobre-mi">Sobre Mí</a></li>
+<li><a href="#habilidades">Habilidades</a></li>
+<li><a href="#proyectos">Proyectos</a></li>
+<li><a href="#contacto">Contacto</a></li>
+</ul>
+</nav>
+</header>
+<main>
+<!-- Aquí irá el contenido principal -->
+</main>
+<footer>
+<p>&copy; 2025 [Tu Nombre]. Todos los derechos reservados.</p>
+</footer>
+</body>
+
+¿Qué acabamos de hacer?
+● <header>: Encabezado principal de la página
+● <nav>: Navegación con enlaces internos (usan #)
+● <main>: Contenedor del contenido principal
+● <footer>: Pie de página
+💡 Prueba esto: Guarda el archivo y ábrelo en tu navegador. ¡Ya tienes una página básica!
+
+PASO 3: Creando la sección "Sobre Mí"
+Instrucción: Dentro de <main>, añade:
+<main>
+<section id="sobre-mi">
+<h2>Sobre Mí</h2>
+<article>
+<p>¡Bienvenido a mi perfil personal! Soy un estudiante apasionado de
+<strong>programación web</strong>
+que está descubriendo el fascinante mundo del desarrollo.</p>
+<p>Me encanta <em>resolver problemas</em> mediante código y crear soluciones
+digitales
+que puedan impactar positivamente en la vida de las personas.</p>
+<blockquote>
+<p>"El código es poesía en movimiento"</p>
+<cite>- Mi filosofía personal</cite>
+</blockquote>
+</article>
+</section>
+<!-- Las demás secciones irán aquí -->
+</main>
+
+¿Qué acabamos de hacer?
+● <section id="sobre-mi">: Sección con ID para navegación
+● <article>: Contenido independiente y completo
+● <strong>: Texto importante (negrita semántica)
+● <em>: Énfasis (cursiva semántica)
+● <blockquote> y <cite>: Para citas textuales
+
+PASO 4: Sección de Habilidades con listas y tablas
+Instrucción: Después de la sección anterior, añade:
+<section id="habilidades">
+<h2>Mis Habilidades Técnicas</h2>
+
+<h3>Frontend</h3>
+<ul>
+<li><strong>HTML5:</strong> Estructura semántica</li>
+<li><strong>CSS3:</strong> Diseño responsive</li>
+<li><strong>JavaScript:</strong> Interactividad</li>
+</ul>
+<h3>Herramientas</h3>
+<ul>
+<li><strong>Git:</strong> Control de versiones</li>
+<li><strong>VS Code:</strong> Editor favorito</li>
+<li><strong>Chrome DevTools:</strong> Debugging</li>
+</ul>
+<!-- Tabla de progreso -->
+<h3>Mi Progreso de Aprendizaje</h3>
+<table border="1">
+<thead>
+<tr>
+<th>Tecnología</th>
+<th>Nivel</th>
+<th>Horas Estudiadas</th>
+<th>Próximo Objetivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>HTML5</td>
+<td>⭐⭐⭐⭐</td>
+<td>25 hrs</td>
+<td>Accesibilidad web</td>
+</tr>
+<tr>
+<td>CSS3</td>
+<td>⭐⭐⭐</td>
+<td>20 hrs</td>
+<td>Grid y Flexbox avanzado</td>
+</tr>
+<tr>
+<td>JavaScript</td>
+<td>⭐⭐</td>
+<td>15 hrs</td>
+<td>DOM manipulation</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+¿Qué acabamos de hacer?
+● <ul> y <li>: Listas no ordenadas
+● <table>, <thead>, <tbody>, <tr>, <th>, <td>: Tabla completa
+● Organización jerárquica con <h2> y <h3>
+
+PASO 5: Sección de Proyectos
+Instrucción: Continúa añadiendo:
+<section id="proyectos">
+<h2>Mis Proyectos</h2>
+<article>
+<h3>1. Mi Primera Página Web</h3>
+<p>Una página personal creada completamente con HTML5 y CSS3.
+Incluye diseño responsive y animaciones suaves.</p>
+<p><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript básico</p>
+<p><strong>Estado:</strong> ✅ Completado</p>
+</article>
+<article>
+<h3>2. Calculadora Web Interactiva</h3>
+<p>Una calculadora funcional que opera con las cuatro operaciones básicas.</p>
+<p><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript</p>
+<p><strong>Estado:</strong> 🔄 En progreso</p>
+</article>
+<article>
+<h3>3. Blog Personal (Próximamente)</h3>
+<p>Un blog donde compartiré mi experiencia aprendiendo programación web.</p>
+<p><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript, Node.js</p>
+<p><strong>Estado:</strong> 📋 Planeado</p>
+</article>
+</section>
+
+PASO 6: Añadiendo un Aside con información adicional
+Instrucción: Después de la sección de proyectos:
+<aside>
+<h3>Datos Curiosos sobre Mí</h3>
+<ul>
+
+<li>☕ Tazas de café consumidas mientras programo: <strong>3 al día</strong></li>
+<li>🎵 Género musical favorito para concentrarme: <strong>Lo-Fi Hip
+Hop</strong></li>
+<li>📚 Libro de programación favorito: <strong>"Clean Code"</strong></li>
+<li>🎮 Videojuego favorito: <strong>Minecraft</strong></li>
+<li>🌍 Sueño profesional: <strong>Trabajar remotamente</strong></li>
+</ul>
+<h4>Logros Recientes</h4>
+<ol>
+<li>Completé mi primer curso de HTML5</li>
+<li>Creé mi primera página web desde cero</li>
+<li>Aprendí a usar Git y GitHub</li>
+<li>Participé en mi primera comunidad de desarrolladores</li>
+</ol>
+</aside>
+
+¿Qué acabamos de hacer?
+● <aside>: Contenido complementario
+● <ol>: Lista ordenada (con números)
+● Emojis para hacer el contenido más atractivo
+
+PASO 7: Formulario de contacto completo
+Instrucción: Finalmente, añadimos el formulario antes de cerrar </main>:
+<section id="contacto">
+<h2>Formulario de Contacto</h2>
+<p>¿Quieres colaborar en un proyecto o simplemente saludar? ¡Me encantaría
+escucharte!</p>
+<form action="/procesar-contacto" method="POST">
+<!-- Información personal -->
+<fieldset>
+<legend>Información Personal</legend>
+<label for="nombre">Nombre completo: *</label>
+<input type="text" id="nombre" name="nombre" required
+placeholder="Ej: María González" maxlength="50">
+<label for="email">Correo electrónico: *</label>
+<input type="email" id="email" name="email" required
+placeholder="Ej: maria@email.com">
+
+<label for="telefono">Teléfono (opcional):</label>
+<input type="tel" id="telefono" name="telefono"
+placeholder="Ej: +52 55 1234 5678">
+<label for="edad">Edad:</label>
+<input type="number" id="edad" name="edad"
+min="13" max="99" placeholder="Ej: 25">
+</fieldset>
+<!-- Motivo de contacto -->
+<fieldset>
+<legend>Motivo de Contacto</legend>
+<label for="asunto">Selecciona el asunto: *</label>
+<select id="asunto" name="asunto" required>
+<option value="">-- Elige una opción --</option>
+<option value="trabajo">Oportunidad de trabajo</option>
+<option value="proyecto">Colaboración en proyecto</option>
+<option value="mentoria">Solicitar mentoría</option>
+<option value="consulta">Consulta técnica</option>
+<option value="otros">Otros</option>
+</select>
+<p>Nivel de urgencia:</p>
+<input type="radio" id="baja" name="urgencia" value="baja" checked>
+<label for="baja">Baja - Puedo esperar una semana</label><br>
+<input type="radio" id="media" name="urgencia" value="media">
+<label for="media">Media - Respuesta en 2-3 días</label><br>
+<input type="radio" id="alta" name="urgencia" value="alta">
+<label for="alta">Alta - Necesito respuesta pronto</label>
+</fieldset>
+<!-- Mensaje -->
+<fieldset>
+<legend>Tu Mensaje</legend>
+<label for="mensaje">Cuéntame más detalles: *</label>
+<textarea id="mensaje" name="mensaje" rows="6" required
+placeholder="Escribe aquí tu mensaje..."
+maxlength="1000"></textarea>
+<label for="fecha-reunion">Fecha preferida para reunión virtual:</label>
+<input type="datetime-local" id="fecha-reunion" name="fecha-reunion">
+</fieldset>
+
+<!-- Preferencias -->
+<fieldset>
+<legend>Preferencias</legend>
+<input type="checkbox" id="copia" name="copia" value="si">
+<label for="copia">Enviarme una copia del mensaje</label><br>
+<input type="checkbox" id="newsletter" name="newsletter" value="si">
+<label for="newsletter">Suscribirme a tu newsletter</label><br>
+<input type="checkbox" id="whatsapp" name="whatsapp" value="si">
+<label for="whatsapp">Contactarme por WhatsApp también</label>
+</fieldset>
+<!-- Botones -->
+<button type="submit">📤 Enviar Mensaje</button>
+<button type="reset">️ Limpiar Formulario</button>
+</form>
+</section>
+
+¿Qué acabamos de hacer?
+● <form> con atributos action y method
+● <fieldset> y <legend> para agrupar campos
+● <label> asociados con for e id
+● Diferentes tipos de <input>: text, email, tel, number, radio, checkbox, datetime-local
+● <select> con <option>
+● <textarea> para texto largo
+● <button> con diferentes tipos
+
+✅ VERIFICACIÓN FINAL
+Tu archivo HTML completo debe tener esta estructura:
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<!-- Metadatos -->
+</head>
+<body>
+<header>
+<!-- Título y navegación -->
+</header>
+
+<main>
+<section id="sobre-mi">
+<!-- Información personal -->
+</section>
+<section id="habilidades">
+<!-- Listas y tabla -->
+</section>
+<section id="proyectos">
+<!-- Articles de proyectos -->
+</section>
+<aside>
+<!-- Información complementaria -->
+</aside>
+<section id="contacto">
+<!-- Formulario completo -->
+</section>
+</main>
+<footer>
+<!-- Pie de página -->
+</footer>
+</body>
+</html>
+
+🎯 EJERCICIOS ADICIONALES PARA PRACTICAR
+Ejercicio 1: Galería de imágenes
+Añade una nueva sección con imágenes usando:
+<section id="galeria">
+<h2>Mi Galería</h2>
+<figure>
+<img src="imagen1.jpg" alt="Descripción de la imagen">
+<figcaption>Mi primer proyecto web</figcaption>
+</figure>
+</section>
+
+Ejercicio 2: Información de estudios
+
+Crea una tabla con tu horario de estudios:
+<section id="horario">
+<h2>Mi Horario de Estudio</h2>
+<table border="1">
+<thead>
+<tr>
+<th>Hora</th>
+<th>Lunes</th>
+<th>Martes</th>
+<th>Miércoles</th>
+<th>Jueves</th>
+<th>Viernes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9:00 - 10:00</td>
+<td>HTML</td>
+<td>CSS</td>
+<td>JavaScript</td>
+<td>Práctica</td>
+<td>Proyecto</td>
+</tr>
+<!-- Más filas aquí -->
+</tbody>
+</table>
+</section>
+
+Ejercicio 3: Formulario de registro (pueden usar el del pptx)
+Crea un formulario más complejo con:
+● Campo de fecha de nacimiento (type="date")
+● Campo de archivo para CV (type="file")
+● Campo de color favorito (type="color")
+● Campo de rango para experiencia (type="range")
+
+📚 CONCEPTOS CLAVE APRENDIDOS
+1. Estructura HTML5: DOCTYPE, html, head, body
+2. Metadatos: charset, viewport, description, author, title
+3. Etiquetas semánticas: header, nav, main, section, article, aside, footer
+4. Etiquetas de presentación: h1-h6, p, strong, em, blockquote, cite
+
+5. Listas: ul, ol, li
+6. Tablas: table, thead, tbody, tr, th, td
+7. Formularios: form, fieldset, legend, label, input (todos los tipos), select, option,
+textarea, button
+8. Navegación interna: enlaces con #id
+9. Accesibilidad básica: alt, label for, required
