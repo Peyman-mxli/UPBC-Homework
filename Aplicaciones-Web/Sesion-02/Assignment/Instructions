@@ -1,0 +1,561 @@
+Aplicaciones Web
+
+Sesión 2 — Introducción a CSS3: estilizando el sitio de presentación personal
+
+M.C. Jesús Naranjo Avilez | UPBC | ITI — 4.° cuatrimestre
+
+¿Qué es CSS y para qué sirve?
+En la sesión anterior construiste un sitio web con varias páginas HTML. El contenido está ahí: tu
+nombre, tu fotografía, tus proyectos, tus grados académicos. Sin embargo, si lo ves en el navegador
+notarás que la presentación es muy básica: texto negro sobre fondo blanco, sin colores, sin una
+tipografía cuidada, sin ningún elemento visual que llame la atención.
+CSS (Cascading Style Sheets, u Hojas de Estilo en Cascada) es el lenguaje que resuelve exactamente
+ese problema. Con CSS definen la apariencia visual de tu sitio: colores, tipografías, tamaños,
+espaciados, bordes, sombras y mucho más. HTML se encarga de la estructura y el contenido; CSS se
+encarga de cómo se ve.
+La palabra cascada en el nombre hace referencia a la forma en que los estilos se aplican y heredan:
+un estilo definido en un elemento padre se transmite a sus elementos hijos, y cuando hay reglas en
+conflicto, CSS sigue un orden de prioridad bien definido para decidir cuál prevalece.
+
+Nota
+HTML responde a la pregunta: ¿qué hay en la página?
+CSS responde a la pregunta: ¿cómo se ve lo que hay en la página?
+En sesiones posteriores, JavaScript responderá a: ¿cómo se comporta la página?
+
+Un solo archivo CSS para todo el sitio
+CSS puede escribirse de tres formas distintas: directamente en cada etiqueta HTML (estilos en línea),
+dentro de una etiqueta &lt;style&gt; en el &lt;head&gt; de cada página (estilos internos), o en un archivo
+independiente con extensión .css vinculado desde cada página (hoja de estilos externa).
+Para un sitio con varias páginas, la hoja de estilos externa es siempre la mejor opción. La razón es
+sencilla: si defines los colores y la tipografía en un único archivo CSS y lo vinculas a todas tus páginas,
+cualquier cambio que hagas en ese archivo se reflejará automáticamente en todo el sitio. No necesitas
+modificar cada página por separado.
+Eso es exactamente lo que harás hoy. Crearás un archivo llamado estilos.css y lo vincularás a todas
+las páginas de tu sitio personal. A partir de ese momento, cada regla de estilo que escribas en ese
+archivo transformará simultáneamente todas las páginas.
+
+Importante
+Todos los archivos de tu sitio (index.html, proyectos.html, grados.html, etc.) deben estar en
+la misma carpeta que el archivo estilos.css.
+Si cambias la ubicación de algún archivo, el enlace al CSS dejará de funcionar.
+
+Paso 1. Crear el archivo estilos.css y vincularlo a todas las páginas
+Abre Visual Studio Code y, dentro de la misma carpeta donde están tus archivos HTML, crea un
+archivo nuevo llamado estilos.css. Por ahora déjalo vacío.
+A continuación, abre cada uno de tus archivos HTML y agrega la siguiente línea dentro de la etiqueta
+&lt;head&gt;, justo después de la línea del &lt;title&gt;:
+
+&lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
+
+La etiqueta &lt;link&gt; le indica al navegador que existe un archivo CSS externo y que debe aplicarlo a esa
+página. El atributo rel=&quot;stylesheet&quot; define la relación entre el HTML y el archivo vinculado; el atributo
+href indica el nombre y la ruta del archivo CSS.
+Así debe quedar el &lt;head&gt; de cada una de tus páginas:
+
+&lt;head&gt;
+&lt;meta charset=&quot;UTF-8&quot;&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+&lt;title&gt;Mi sitio personal&lt;/title&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt;
+&lt;/head&gt;
+
+Nota
+Repite este paso en cada archivo HTML de tu sitio.
+Una vez vinculado, cualquier regla que escribas en estilos.css afectará todas las páginas al
+mismo tiempo.
+Guarda todos los archivos antes de continuar.
+
+Paso 2. Tipografía y colores generales
+Abre el archivo estilos.css. La primera regla que escribirás afectará al elemento &lt;body&gt;, que es el
+contenedor de todo el contenido visible de la página. Los estilos definidos en body se heredan a la
+mayoría de los elementos dentro de él.
+
+/* Estilos generales del sitio */
+body {
+font-family: &#39;Segoe UI&#39;, Arial, sans-serif;
+
+font-size: 16px;
+line-height: 1.7;
+color: #2c2c2c;
+background-color: #f5f5f5;
+margin: 0;
+padding: 0;
+}
+
+Cada propiedad cumple una función específica:
+• font-family define la tipografía. Se especifica una lista de fuentes en orden de preferencia: el
+navegador usará la primera que encuentre instalada en el sistema. sans-serif al final es una
+fuente genérica de respaldo garantizada en todos los dispositivos.
+• font-size establece el tamaño base del texto en la página. El valor 16px es el estándar
+recomendado para lectura en pantalla.
+• line-height controla el espacio entre líneas de texto. Un valor de 1.7 significa que el espacio entre
+líneas es 1.7 veces el tamaño de la fuente, lo que mejora significativamente la legibilidad.
+• color define el color del texto. Se recomienda usar un gris muy oscuro (#2c2c2c) en lugar de
+negro puro (#000000) porque reduce el contraste extremo y resulta más cómodo para la lectura
+prolongada.
+• background-color establece el color de fondo de la página. Un gris muy claro (#f5f5f5) es más
+suave para la vista que el blanco puro.
+• margin: 0 y padding: 0 eliminan los márgenes y rellenos que los navegadores agregan por
+defecto al body, para partir desde un estado controlado.
+
+Nota
+Guarda estilos.css y recarga cualquiera de tus páginas HTML en el navegador.
+Deberías ver un cambio inmediato en la tipografía y el color de fondo.
+El cambio aplica en todas las páginas del sitio sin que hayas modificado ningún HTML.
+
+Paso 3. Estilizar los encabezados
+Ahora darás un tratamiento visual a los encabezados h1 y h2. El h1 es el título principal de cada
+página y debe destacar claramente; el h2 funciona como subtítulo y debe ser visualmente subordinado
+al h1 pero igualmente distinguible del texto normal.
+
+/* Encabezados */
+h1 {
+font-size: 2rem;
+color: #1a5c45;
+margin-bottom: 8px;
+border-bottom: 3px solid #1a5c45;
+padding-bottom: 8px;
+}
+h2 {
+font-size: 1.4rem;
+color: #2e7d5e;
+margin-top: 32px;
+margin-bottom: 8px;
+}
+
+Conceptos importantes en estas reglas:
+• rem es una unidad de medida relativa al tamaño de fuente raíz del documento (el que definiste
+en body: 16px). 2rem equivale a 32px. El uso de rem en lugar de px hace que el sitio sea más
+accesible, ya que respeta las preferencias de tamaño de texto del usuario en el navegador.
+• border-bottom agrega una línea decorativa únicamente en la parte inferior del elemento. Los tres
+valores que recibe son: grosor (3px), estilo (solid) y color (#1a5c45).
+• padding-bottom agrega espacio interior entre el texto del encabezado y la línea decorativa
+inferior.
+• margin-top y margin-bottom controlan el espacio exterior por encima y por debajo del elemento.
+
+Nota
+Los colores #1a5c45 y #2e7d5e son tonos de verde oscuro y verde medio.
+Puedes cambiarlos por cualquier color que se adapte a la paleta que hayas elegido para tu
+sitio.
+En CSS los colores se expresan en formato hexadecimal (#rrggbb) o con nombres de color
+en inglés (red, blue, darkgreen, etc.).
+
+Paso 4. Párrafos y enlaces
+
+Los párrafos heredan la tipografía y el color definidos en body, pero puedes ajustar su margen inferior
+para controlar el espacio entre párrafos consecutivos. Los enlaces, por su parte, tienen estilos
+predeterminados del navegador (texto azul subrayado) que casi siempre conviene personalizar.
+
+/* Párrafos */
+p {
+margin-bottom: 16px;
+}
+/* Enlaces */
+a {
+color: #1a5c45;
+text-decoration: none;
+font-weight: bold;
+}
+a:hover {
+color: #2e7d5e;
+text-decoration: underline;
+}
+
+La regla a:hover es una pseudoclase. En CSS, una pseudoclase describe un estado especial de un
+elemento. hover se activa cuando el cursor del usuario pasa por encima del enlace. En este caso, al
+pasar el cursor sobre un enlace, el color cambiará ligeramente y aparecerá el subrayado, dando
+retroalimentación visual al usuario de que el elemento es interactivo.
+text-decoration: none elimina el subrayado predeterminado de los enlaces. font-weight: bold los hace
+visualmente más prominentes dentro del texto.
+
+Nota
+Guarda y recarga. Los enlaces de navegación entre tus páginas ahora tendrán el color y el
+estilo que definiste.
+Haz clic en ellos para verificar que la navegación entre páginas sigue funcionando
+correctamente.
+
+Paso 5. Estilizar la imagen de perfil
+La imagen de tu página principal probablemente se ve demasiado grande o sin ningún tratamiento
+visual. Con CSS puedes controlar su tamaño, agregarle bordes redondeados para que tenga una
+forma circular o de tarjeta, y añadirle una sombra para que resalte sobre el fondo.
+Para aplicar estilos únicamente a la imagen de perfil sin afectar otras imágenes que puedas tener en el
+sitio, agrega el atributo class a la etiqueta &lt;img&gt; en tu HTML:
+
+&lt;img src=&quot;foto.jpg&quot; alt=&quot;Foto de perfil&quot; class=&quot;foto-perfil&quot;&gt;
+
+Una clase es un identificador que puedes asignar a cualquier elemento HTML para aplicarle estilos
+específicos desde CSS. En el archivo estilos.css, las clases se referencian con un punto (.) antes del
+nombre. Agrega la siguiente regla:
+
+/* Imagen de perfil */
+.foto-perfil {
+width: 220px;
+height: 220px;
+object-fit: cover;
+border-radius: 50%;
+border: 4px solid #1a5c45;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+display: block;
+margin: 24px auto;
+}
+
+Cada propiedad tiene un efecto visual específico:
+• width y height definen un tamaño fijo de 220 por 220 píxeles, creando un marco cuadrado.
+• object-fit: cover hace que la imagen llene completamente ese marco cuadrado sin deformarse,
+recortando los bordes si es necesario. Esto es especialmente útil cuando la foto original no es
+cuadrada.
+• border-radius: 50% redondea las esquinas del marco hasta convertirlo en un círculo perfecto. Si
+prefieres una forma rectangular con esquinas suavizadas, usa un valor como 12px en lugar de
+50%.
+• border agrega un borde sólido de 4 píxeles en el color verde del sitio.
+• box-shadow agrega una sombra exterior. Los valores son: desplazamiento horizontal (0),
+desplazamiento vertical (4px), difuminado (16px) y color con transparencia (rgba(0,0,0,0.18) es
+negro al 18% de opacidad).
+• display: block con margin: 24px auto centra la imagen horizontalmente en la página.
+
+Nota
+Si tu foto es rectangular y prefieres mantener esa forma, cambia border-radius: 50% por
+border-radius: 12px.
+Puedes modificar el valor de width y height para ajustar el tamaño de la imagen a tu gusto.
+
+Paso 6. Barra de navegación
+Tu sitio tiene varias páginas enlazadas desde la página principal. Una barra de navegación visible en
+todas las páginas facilita que el visitante se mueva entre ellas sin necesidad de usar el botón de
+retroceso del navegador.
+Primero, asegúrate de que todas tus páginas HTML tengan una sección de navegación con la etiqueta
+&lt;nav&gt;. Si aún no la tienes, agrégala en cada página justo después de abrir &lt;body&gt;:
+
+&lt;nav&gt;
+&lt;a href=&quot;index.html&quot;&gt;Inicio&lt;/a&gt;
+&lt;a href=&quot;proyectos.html&quot;&gt;Proyectos&lt;/a&gt;
+&lt;a href=&quot;grados.html&quot;&gt;Grados académicos&lt;/a&gt;
+&lt;a href=&quot;contacto.html&quot;&gt;Contacto&lt;/a&gt;
+&lt;/nav&gt;
+
+Ajusta los nombres de los archivos y las etiquetas de los enlaces según las páginas que hayas creado.
+Ahora agrega los siguientes estilos en tu archivo estilos.css:
+
+/* Barra de navegación */
+nav {
+background-color: #1a5c45;
+padding: 14px 32px;
+display: flex;
+gap: 24px;
+}
+nav a {
+color: #ffffff;
+text-decoration: none;
+font-weight: bold;
+font-size: 0.95rem;
+padding: 6px 12px;
+border-radius: 6px;
+transition: background-color 0.2s;
+}
+nav a:hover {
+background-color: #2e7d5e;
+text-decoration: none;
+}
+
+Puntos clave de estas reglas:
+• display: flex activa el modelo de caja flexible en la barra de navegación, lo que hace que los
+enlaces se acomoden en una fila horizontal de forma automática.
+
+• gap: 24px define el espacio entre cada enlace dentro del nav.
+• nav a es un selector descendiente: aplica los estilos únicamente a los elementos &lt;a&gt; que estén
+dentro de un &lt;nav&gt;. Esto evita que los estilos de la barra de navegación afecten a otros enlaces
+del sitio.
+• transition: background-color 0.2s agrega una animación suave al cambio de color cuando el
+cursor pasa sobre el enlace. El valor 0.2s indica que la transición dura dos décimas de segundo.
+• border-radius: 6px en los enlaces les da esquinas ligeramente redondeadas, lo que hace que el
+efecto hover se vea como un botón.
+
+Nota
+Guarda estilos.css y recarga cualquiera de tus páginas.
+La barra de navegación aparecerá en todas las páginas sin que hayas modificado el CSS
+más de una vez.
+Ese es el poder de una hoja de estilos externa: un cambio, efecto en todo el sitio.
+
+Paso 7. Centrar y limitar el ancho del contenido
+En pantallas anchas, el texto que se extiende de borde a borde resulta difícil de leer. La práctica
+estándar en diseño web es limitar el ancho del contenido principal y centrarlo horizontalmente. Para
+lograrlo, envuelve el contenido de cada página dentro de un &lt;div&gt; con una clase llamada contenedor,
+justo después del cierre de &lt;/nav&gt;:
+
+&lt;body&gt;
+&lt;nav&gt;
+&lt;!-- tus enlaces de navegación --&gt;
+&lt;/nav&gt;
+&lt;div class=&quot;contenedor&quot;&gt;
+&lt;!-- todo el contenido visible de la página va aquí --&gt;
+&lt;/div&gt;
+&lt;/body&gt;
+
+Luego agrega la siguiente regla en estilos.css:
+
+/* Contenedor principal */
+.contenedor {
+max-width: 860px;
+margin: 40px auto;
+padding: 0 24px;
+}
+
+El efecto de estas tres propiedades combinadas es muy notable:
+• max-width: 860px establece que el contenedor nunca superará los 860 píxeles de ancho, aunque
+la pantalla sea más grande. En pantallas más pequeñas, el contenedor se ajustará
+automáticamente al ancho disponible.
+• margin: 40px auto añade 40 píxeles de espacio por encima y por debajo del contenedor, y auto
+en los laterales hace que el navegador distribuya el espacio sobrante de manera equitativa a
+ambos lados, centrando el bloque horizontalmente.
+• padding: 0 24px agrega un relleno interior de 24 píxeles a los lados, para que el texto no quede
+pegado al borde en pantallas pequeñas.
+
+Nota
+Este paso requiere que modifiques el HTML de cada una de tus páginas para envolver el
+contenido en el div.contenedor.
+Es el único paso de esta sesión en el que necesitas editar los archivos HTML además del
+CSS.
+
+Archivo estilos.css completo
+Al terminar todos los pasos, tu archivo estilos.css debe verse así. Compara con lo que tienes y verifica
+que no falte ninguna regla:
+
+/* =========================================
+Hoja de estilos — Sitio de presentación personal
+Aplicaciones Web — UPBC
+========================================= */
+/* Estilos generales */
+body {
+font-family: &#39;Segoe UI&#39;, Arial, sans-serif;
+font-size: 16px;
+line-height: 1.7;
+color: #2c2c2c;
+background-color: #f5f5f5;
+margin: 0;
+padding: 0;
+}
+/* Encabezados */
+h1 {
+font-size: 2rem;
+color: #1a5c45;
+margin-bottom: 8px;
+border-bottom: 3px solid #1a5c45;
+padding-bottom: 8px;
+
+}
+h2 {
+font-size: 1.4rem;
+color: #2e7d5e;
+margin-top: 32px;
+margin-bottom: 8px;
+}
+/* Párrafos */
+p {
+margin-bottom: 16px;
+}
+/* Enlaces */
+a {
+color: #1a5c45;
+text-decoration: none;
+font-weight: bold;
+}
+a:hover {
+color: #2e7d5e;
+text-decoration: underline;
+}
+/* Imagen de perfil */
+.foto-perfil {
+width: 220px;
+height: 220px;
+object-fit: cover;
+border-radius: 50%;
+border: 4px solid #1a5c45;
+box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+display: block;
+margin: 24px auto;
+}
+/* Barra de navegación */
+nav {
+background-color: #1a5c45;
+padding: 14px 32px;
+display: flex;
+gap: 24px;
+}
+nav a {
+color: #ffffff;
+text-decoration: none;
+font-weight: bold;
+font-size: 0.95rem;
+
+padding: 6px 12px;
+border-radius: 6px;
+transition: background-color 0.2s;
+}
+nav a:hover {
+background-color: #2e7d5e;
+text-decoration: none;
+}
+/* Contenedor principal */
+.contenedor {
+max-width: 860px;
+margin: 40px auto;
+padding: 0 24px;
+}
+
+Lo que aprendiste en esta sesión
+En esta sesión aplicaste CSS3 por primera vez a un proyecto real. Los conceptos y técnicas que
+practicaste son los cimientos del diseño web front end:
+• Vinculaste una hoja de estilos externa a múltiples páginas HTML con una sola línea de código.
+• Definiste estilos globales en el selector body que se heredan a toda la página.
+• Aplicaste propiedades de tipografía, color, espaciado y decoración a encabezados, párrafos y
+enlaces.
+• Usaste pseudoclases (:hover) para agregar interactividad visual sin necesidad de JavaScript.
+• Estilizaste una imagen con bordes redondeados, tamaño controlado y sombra.
+• Construiste una barra de navegación con display: flex y transiciones suaves.
+• Centraste y limitaste el ancho del contenido para mejorar la legibilidad.
+
+Nota
+Evidencia de esta sesión: el sitio de presentación personal completo, con todas las páginas
+HTML vinculadas al archivo estilos.css y los estilos de esta práctica aplicados.
+Entrega de reporte en classroom.
+
+Tarea: Creando contacto.html desde cero
+Para crear esta nueva página y que herede los estilos que ya definieron en estilos.css, sigan estos
+pasos:
+1. Creen el archivo: En su carpeta de proyecto, creen un archivo nuevo llamado contacto.html.
+2. Copien la estructura: Copien el código HTML de index.html (o cualquier otra página que ya
+tengan terminada) y péguenlo en el nuevo archivo.
+
+3. Limpieza: Borren el contenido antiguo (párrafos, fotos, listas) que está dentro del &lt;div
+class=&quot;contenedor&quot;&gt;, pero dejen intactos el nav y el div class=&quot;contenedor&quot; mismo.
+4. Vinculación: Asegúrense de que la etiqueta &lt;link rel=&quot;stylesheet&quot; href=&quot;estilos.css&quot;&gt; esté
+presente en el &lt;head&gt;.
+5. Navegación: No olviden agregar el enlace &lt;a href=&quot;contacto.html&quot;&gt;Contacto&lt;/a&gt; en el &lt;nav&gt;
+de todas sus páginas (incluyendo la nueva) para que sea posible navegar hacia ella.
+Apoyo con código:
+1. Creación de la página (HTML)
+Primero, deben crear el archivo contacto.html en su carpeta de proyecto. Utilicen como base una de
+sus páginas anteriores para mantener la estructura (títulos, nav, y .contenedor).
+Una vez creada, dentro del &lt;div class=&quot;contenedor&quot;&gt;, inserten el siguiente formulario:
+&lt;h1&gt;Contacto&lt;/h1&gt;
+&lt;p&gt;¿Tienes alguna duda o propuesta? Escríbeme a través de este formulario:&lt;/p&gt;
+&lt;form action=&quot;#&quot; method=&quot;post&quot;&gt;
+&lt;label for=&quot;nombre&quot;&gt;Nombre completo:&lt;/label&gt;
+&lt;input type=&quot;text&quot; id=&quot;nombre&quot; name=&quot;nombre&quot; placeholder=&quot;Tu nombre&quot; required&gt;
+&lt;label for=&quot;email&quot;&gt;Correo electrónico:&lt;/label&gt;
+&lt;input type=&quot;email&quot; id=&quot;email&quot; name=&quot;email&quot; placeholder=&quot;ejemplo@correo.com&quot; required&gt;
+&lt;label for=&quot;mensaje&quot;&gt;Mensaje:&lt;/label&gt;
+&lt;textarea id=&quot;mensaje&quot; name=&quot;mensaje&quot; rows=&quot;5&quot; placeholder=&quot;Escribe aquí tu mensaje...&quot;
+required&gt;&lt;/textarea&gt;
+&lt;button type=&quot;submit&quot;&gt;Enviar mensaje&lt;/button&gt;
+&lt;/form&gt;
+2. Estilización (CSS)
+Agreguen al final de su archivo estilos.css las siguientes reglas para que el formulario se integre con la
+identidad visual que definimos en la sesión anterior:
+/* Estilos para el formulario */
+form {
+
+display: flex;
+flex-direction: column;
+gap: 15px;
+margin-top: 20px;
+}
+input, textarea {
+width: 100%;
+padding: 10px;
+border: 1px solid #ccc;
+border-radius: 6px;
+font-family: inherit;
+box-sizing: border-box; /* Importante para que el padding no desborde el ancho */
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #1a5c45; /* Verde corporativo */
+box-shadow: 0 0 5px rgba(26, 92, 69, 0.2);
+}
+button {
+background-color: #1a5c45;
+color: white;
+padding: 12px;
+border: none;
+border-radius: 6px;
+
+cursor: pointer;
+font-weight: bold;
+transition: background-color 0.2s;
+}
+button:hover {
+background-color: #2e7d5e;
+}
+Criterios de Evaluación:
+1. Navegación: El enlace a &quot;Contacto&quot; debe estar visible y funcional en todas las páginas del
+sitio.
+2. Estructura: Uso correcto de etiquetas semánticas (label, input, textarea).
+3. Consistencia Visual: El formulario debe respetar el ancho del contenedor (.contenedor) y los
+colores definidos previamente.
+4. Interactividad: El estado :focus debe estar implementado para mejorar la usabilidad.
+Para construir nuestra nueva página contacto.html, hemos introducido etiquetas que no habíamos
+usado antes. A diferencia de las etiquetas de estructura (div, nav, h1), estas etiquetas tienen una
+función interactiva: capturan la información que el usuario escribe.
+Descripción de las nuevas etiquetas:
+● &lt;form&gt; (El contenedor de datos)
+Es la etiqueta que &quot;empaqueta&quot; todos los datos. Sin esta etiqueta, el navegador no sabe que lo
+que está adentro debe procesarse para enviarse.
+○ Atributos clave:
+■ action=&quot;#&quot;: Indica a dónde enviar la información (en esta práctica, el # es un
+marcador de posición).
+■ method=&quot;post&quot;: Define el método de envío; post es el estándar recomendado
+para enviar datos de forma segura (como mensajes o contraseñas).
+
+● &lt;label&gt; (La etiqueta de texto / Accesibilidad)
+Es el texto que indica al usuario qué debe escribir en cada campo.
+○ Por qué es importante: No es solo texto decorativo. Su atributo for debe coincidir
+exactamente con el id de un campo de entrada. Esto crea una conexión lógica: si el
+usuario hace clic en el texto del label, el navegador automáticamente pondrá el cursor
+dentro del campo correspondiente. Es fundamental para la accesibilidad web.
+
+● &lt;input&gt; (El campo de entrada)
+Es el elemento más versátil. Dependiendo de su atributo type, se comporta de forma distinta.
+○ Atributos clave:
+■ type=&quot;text&quot;: Crea un campo de una sola línea para texto plano (ej. Nombre).
+■ type=&quot;email&quot;: Igual que el texto, pero el navegador valida automáticamente que
+
+contenga una estructura de correo válida (con @ y dominio).
+■ placeholder: Muestra un texto guía dentro del campo antes de que el usuario
+escriba.
+■ required: Un atributo booleano (no necesita valor) que obliga al usuario a llenar
+el campo antes de poder presionar enviar.
+
+● &lt;textarea&gt; (El área de texto multilínea)
+A diferencia del input, este elemento está diseñado para mensajes largos donde se requiere
+salto de línea.
+○ Atributos clave:
+■ rows=&quot;5&quot;: Define la altura inicial del cuadro de texto (en este caso, 5 líneas de
+alto).
+
+● &lt;button&gt; (El disparador de acción)
+Es el botón que el usuario presiona para ejecutar la acción.
+○ Atributos clave:
+■ type=&quot;submit&quot;: Este valor es vital. Le indica al navegador que este botón es el
+encargado de &quot;enviar&quot; (submit) toda la información contenida dentro del &lt;form&gt;.
+
+-----Nota de Diseño (CSS)
+¿Por qué se ve así nuestro formulario? Aquí te explico brevemente las decisiones que tomamos en
+CSS:
+● display: flex en form: Al aplicar esto al contenedor del formulario, convertimos el formulario en
+un &quot;flexbox&quot;. Esto nos permite usar flex-direction: column para que todos los elementos
+(etiquetas y campos) se apilen verticalmente uno debajo del otro de forma automática, en lugar
+de intentar ponerse uno al lado del otro.
+● box-sizing: border-box en input/textarea: Esta es una regla de oro. Por defecto, si agregas
+padding a un elemento, este crece y se sale de su contenedor. border-box obliga al navegador
+a incluir el padding dentro del ancho del elemento, manteniendo todo alineado perfectamente al
+100% del ancho.
+● :focus: Esta es una pseudoclase. Se activa solo cuando el usuario hace clic dentro del
+campo. Es la mejor forma de dar retroalimentación visual (cambio de color/sombra) para que el
+usuario sepa exactamente dónde está escribiendo.
+Cualquier duda, quedo a su disposición.
+Atentamente,
+M.C. Jesús Naranjo Avilez
+Aplicaciones Web | ITI — 4.° cuatrimestre
+UPBC
+
+M.C. Jesús Naranjo Avilez — UPBC — Aplicaciones Web — ITI 4.° cuatrimestre
