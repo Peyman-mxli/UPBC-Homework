@@ -1,3 +1,4 @@
+````markdown
 # ⚡ Session 03 - JavaScript Fundamentals
 
 > Learning the fundamentals of JavaScript to add interactivity, validation, and dynamic behavior to a personal website.
@@ -10,27 +11,27 @@ In this session, I began learning **JavaScript**, the programming language that 
 
 Unlike HTML, which provides the structure of a webpage, and CSS, which controls its appearance, JavaScript allows web pages to respond to user actions, manipulate content dynamically, validate forms, and create interactive experiences.
 
-During this session, I integrated JavaScript into my personal website by creating an external script file and implementing several practical activities that improved the functionality and user experience of the website.
+Following the activities developed during this session, I integrated JavaScript into my personal website by creating an external script file and implementing several practical exercises such as a dynamic greeting, contact form validation, a scroll-to-top button, a click counter, and a personal mini quiz. These activities introduced the core concepts of front-end programming and user interaction. :contentReference[oaicite:0]{index=0}
 
 ---
 
 # 🎯 Learning Objectives
 
-During this session I learned how to:
+Throughout this session I learned how to:
 
-- ⚡ Understand what JavaScript is
-- 🌐 Connect JavaScript with HTML
-- 📄 Create external JavaScript files
-- 🧠 Use variables and conditional statements
+- ⚡ Understand the purpose of JavaScript
+- 🌐 Connect JavaScript to HTML pages
+- 📄 Create and use external JavaScript files
+- 🧠 Work with variables and conditional statements
 - ⏰ Display dynamic greetings based on the current time
 - 📝 Validate HTML forms
-- 🚨 Display custom error messages
-- 🖱 Handle user events
+- 🚨 Show custom validation messages
+- 🖱 Handle browser and user events
 - 🔝 Create a "Back to Top" button
 - ❤️ Build a click counter
 - 🎮 Develop a personal mini quiz
 - 🧩 Manipulate the DOM
-- 📅 Work with Date objects
+- 📅 Work with JavaScript Date objects
 
 ---
 
@@ -55,95 +56,100 @@ Sesion-03
 
 ## 📌 1. Introduction to JavaScript
 
+In this section I learned what JavaScript is and why it is an essential programming language for modern web development.
+
+Topics covered:
+
 - What JavaScript is
-- HTML + CSS + JavaScript
-- Front-End interaction
+- HTML, CSS and JavaScript relationship
 - Client-side programming
+- Front-End interactivity
+- External JavaScript files
 
 ---
 
 ## 🌞 2. Dynamic Greeting
 
-Created a greeting that changes automatically depending on the current time.
+Developed a greeting that automatically changes depending on the user's current time.
 
-Example:
+Examples:
 
-- Good Morning
-- Good Afternoon
-- Good Evening
+- 🌅 Good Morning
+- ☀️ Good Afternoon
+- 🌙 Good Evening
 
 Concepts used:
 
-- Date()
-- getHours()
-- if / else
-- textContent
+- `Date()`
+- `getHours()`
+- `if / else`
+- `textContent`
 
 ---
 
 ## 📝 3. Contact Form Validation
 
-Implemented client-side validation using JavaScript.
+Implemented client-side validation to verify user input before processing the form.
 
-Validation includes:
+Features:
 
-- Required name
-- Valid email format
+- Required name validation
+- Email format validation
 - Minimum message length
-- Error messages
+- Custom error messages
 - Success confirmation
 
 Concepts used:
 
 - Forms
-- addEventListener()
-- preventDefault()
+- `addEventListener()`
+- `preventDefault()`
 - Regular Expressions
-- classList
+- `classList`
 
 ---
 
 ## 🔝 4. Scroll To Top Button
 
-Created a floating button that appears while scrolling and smoothly returns the user to the top of the page.
+Created a floating button that appears while the user scrolls down the page and smoothly returns to the top.
 
 Concepts used:
 
 - Scroll Event
-- window.scrollY
-- window.scrollTo()
-- CSS Position Fixed
+- `window.scrollY`
+- `window.scrollTo()`
+- CSS Fixed Position
 
 ---
 
 ## ❤️ 5. Click Counter
 
-Implemented a button that counts how many times users click on it.
+Developed a button that counts the number of user clicks in real time.
 
 Concepts used:
 
 - Variables
 - Click Events
 - DOM Manipulation
-- textContent
+- `textContent`
 
 ---
 
 ## 🎮 6. Personal Mini Quiz
 
-Developed an interactive quiz about myself.
+Built an interactive quiz where visitors answer questions about me and receive their final score.
 
-The quiz:
+Features:
 
-- Displays multiple questions
-- Evaluates selected answers
-- Counts correct answers
-- Displays the final score
+- Multiple-choice questions
+- Answer validation
+- Score calculation
+- Dynamic results display
 
 Concepts used:
 
 - Radio Buttons
-- querySelector()
+- `querySelector()`
 - Objects
 - Event Listeners
 - Conditional Statements
@@ -152,13 +158,15 @@ Concepts used:
 
 # 🛠 Technologies Used
 
+Throughout this session I worked with:
+
 - HTML5
 - CSS3
 - JavaScript (ES6)
 - Visual Studio Code
-- Google Chrome
 - Git
 - GitHub
+- Google Chrome Developer Tools
 
 ---
 
@@ -171,7 +179,7 @@ Concepts used:
 | Contact Form Validation | ✅ Completed |
 | Scroll To Top Button | ✅ Completed |
 | Click Counter | ✅ Completed |
-| Personal Quiz | ✅ Completed |
+| Personal Mini Quiz | ✅ Completed |
 
 ---
 
@@ -179,16 +187,16 @@ Concepts used:
 
 During this session I practiced:
 
-- Variables (`const`, `let`)
-- Conditional Statements
-- Functions
-- Objects
+- Variables (`const` and `let`)
+- Conditional Statements (`if`, `else`)
+- JavaScript Objects
 - DOM Manipulation
 - Event Handling
 - Form Validation
 - Scroll Events
 - Click Events
 - JavaScript Date API
+- External JavaScript Files
 
 ---
 
@@ -196,12 +204,13 @@ During this session I practiced:
 
 After completing this session, I am able to:
 
-- Connect JavaScript to HTML pages.
+- Connect JavaScript files to HTML pages.
 - Modify webpage content dynamically.
 - Validate user input before processing forms.
-- Respond to user interactions.
-- Create interactive components.
-- Improve user experience with JavaScript.
+- Handle browser events and user interactions.
+- Build interactive web components.
+- Improve the user experience with JavaScript.
+- Create responsive front-end behavior.
 
 ---
 
@@ -219,31 +228,34 @@ Web Applications
 👨‍🏫 Professor:
 M.C. Jesús Naranjo Avilez
 
-🌍 Originally from Iran 🇮🇷
+🌍 Originally from Iran 🇮🇷  
 Currently living in Mexico 🇲🇽
 
 ---
 
 # 🚀 Goal
 
-The objective of this session is to understand the fundamentals of JavaScript and begin creating dynamic and interactive web applications using modern front-end development techniques.
+The goal of this session is to understand the fundamentals of JavaScript and begin developing dynamic and interactive web pages by combining HTML, CSS, and JavaScript using modern front-end development techniques.
 
 ---
 
 # ⭐ Conclusion
 
-Session 03 represents the transition from creating static web pages to developing interactive websites.
+Session 03 marks the transition from creating static web pages to building interactive web applications.
 
-By combining HTML, CSS, and JavaScript, I can now build web pages that respond to user actions, validate information, manipulate content dynamically, and provide a richer user experience.
+By integrating JavaScript with HTML and CSS, I learned how to manipulate webpage content, validate forms, respond to user actions, and create dynamic components that improve usability and user experience.
 
-These skills are the foundation for modern front-end development and future Full Stack applications.
+These skills provide a strong foundation for future front-end development and Full Stack Software Engineering projects. :contentReference[oaicite:1]{index=1}
 
 ---
 
 # ⭐ Thank You
 
-Thank you for visiting my **Session 03 - JavaScript Fundamentals** repository.
+Thank you for visiting my **Session 03 – JavaScript Fundamentals** repository.
 
-This session represents another important step in my journey toward becoming a professional Software Engineer.
+Every practice completed in this session represents another step toward becoming a professional Software Engineer and mastering modern web development.
 
 **Happy Coding! 🚀**
+````
+
+This version is based directly on the topics and practices covered in your professor's **Session 03** document (JavaScript introduction, dynamic greeting, form validation, scroll button, click counter, and personal quiz). 
