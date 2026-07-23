@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Quiz | Peyman Miyandashti</title>
+
+    <link rel="stylesheet" href="estilos.css">
+</head>
+
+<body>
+
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="proyectos.html">Proyectos</a>
+        <a href="grados.html">Grados Académicos</a>
+        <a href="contacto.html">Contacto</a>
+        <a href="quiz.html">Mini Quiz</a>
+    </nav>
+
+    <div class="contenedor">
+
+        <h1>¿Qué tanto me conoces?</h1>
+
+        <p>
+            Responde las siguientes preguntas y descubre cuánto sabes sobre mí.
+        </p>
+
+        <hr>
+
+        <!-- Pregunta 1 -->
+        <div id="pregunta-1">
+
+            <p><strong>1. ¿Cuál es mi lenguaje de programación favorito?</strong></p>
+
+            <label>
+                <input type="radio" name="p1" value="python">
+                Python
+            </label><br>
+
+            <label>
+                <input type="radio" name="p1" value="javascript">
+                JavaScript
+            </label><br>
+
+            <label>
+                <input type="radio" name="p1" value="java">
+                Java
+            </label>
+
+        </div>
+
+        <hr>
+
+        <!-- Pregunta 2 -->
+        <div id="pregunta-2">
+
+            <p><strong>2. ¿De qué país soy originario?</strong></p>
+
+            <label>
+                <input type="radio" name="p2" value="mexico">
+                México
+            </label><br>
+
+            <label>
+                <input type="radio" name="p2" value="iran">
+                Irán
+            </label><br>
+
+            <label>
+                <input type="radio" name="p2" value="canada">
+                Canadá
+            </label>
+
+        </div>
+
+        <hr>
+
+        <!-- Pregunta 3 -->
+        <div id="pregunta-3">
+
+            <p><strong>3. ¿En qué universidad estudio?</strong></p>
+
+            <label>
+                <input type="radio" name="p3" value="upbc">
+                Universidad Politécnica de Baja California
+            </label><br>
+
+            <label>
+                <input type="radio" name="p3" value="uabc">
+                UABC
+            </label><br>
+
+            <label>
+                <input type="radio" name="p3" value="cetys">
+                CETYS Universidad
+            </label>
+
+        </div>
+
+        <hr>
+
+        <!-- Pregunta 4 -->
+        <div id="pregunta-4">
+
+            <p><strong>4. ¿En qué ciudad vivo actualmente?</strong></p>
+
+            <label>
+                <input type="radio" name="p4" value="mexicali">
+                Mexicali
+            </label><br>
+
+            <label>
+                <input type="radio" name="p4" value="tijuana">
+                Tijuana
+            </label><br>
+
+            <label>
+                <input type="radio" name="p4" value="tehran">
+                Teherán
+            </label>
+
+        </div>
+
+        <hr>
+
+        <!-- Pregunta 5 -->
+        <div id="pregunta-5">
+
+            <p><strong>5. ¿Qué área me apasiona más?</strong></p>
+
+            <label>
+                <input type="radio" name="p5" value="ia">
+                Inteligencia Artificial
+            </label><br>
+
+            <label>
+                <input type="radio" name="p5" value="medicina">
+                Medicina
+            </label><br>
+
+            <label>
+                <input type="radio" name="p5" value="arquitectura">
+                Arquitectura
+            </label>
+
+        </div>
+
+        <br>
+
+        <button id="btn-quiz" onclick="calificarQuiz()">
+            Ver resultados
+        </button>
+
+        <br><br>
+
+        <p id="resultado-quiz" style="font-size:20px;font-weight:bold;"></p>
+
+    </div>
+
+    <button id="btn-arriba" title="Volver arriba" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        ↑
+    </button>
+
+    <script>
+        function calificarQuiz() {
+
+            let puntos = 0;
+
+            const p1 = document.querySelector('input[name="p1"]:checked');
+            const p2 = document.querySelector('input[name="p2"]:checked');
+            const p3 = document.querySelector('input[name="p3"]:checked');
+            const p4 = document.querySelector('input[name="p4"]:checked');
+            const p5 = document.querySelector('input[name="p5"]:checked');
+
+            if (!p1 || !p2 || !p3 || !p4 || !p5) {
+                alert("⚠️ Por favor responde todas las preguntas.");
+                return;
+            }
+
+            if (p1.value === "python") puntos++;
+            if (p2.value === "iran") puntos++;
+            if (p3.value === "upbc") puntos++;
+            if (p4.value === "mexicali") puntos++;
+            if (p5.value === "ia") puntos++;
+
+            let mensaje = "";
+
+            switch (puntos) {
+
+                case 5:
+                    mensaje = "🏆 ¡Excelente! ¡Me conoces perfectamente! (5/5)";
+                    break;
+
+                case 4:
+                    mensaje = "😄 ¡Muy bien! Obtuviste 4 de 5.";
+                    break;
+
+                case 3:
+                    mensaje = "🙂 ¡Buen trabajo! Obtuviste 3 de 5.";
+                    break;
+
+                case 2:
+                    mensaje = "😊 Obtuviste 2 de 5. ¡Puedes conocerme mejor!";
+                    break;
+
+                case 1:
+                    mensaje = "😅 Solo acertaste 1 de 5.";
+                    break;
+
+                default:
+                    mensaje = "😂 0 de 5. ¡Necesitas conocerme mucho más!";
+            }
+
+            document.getElementById("resultado-quiz").innerHTML = mensaje;
+        }
+    </script>
+
+</body>
+
+</html>

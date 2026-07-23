@@ -1,0 +1,369 @@
+/* ===========================
+   MATRIX / HACKER THEME
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Share Tech Mono', monospace, Arial, sans-serif;
+
+    background: #000;
+    color: #00ff66;
+
+    line-height: 1.7;
+
+}
+
+/* ===========================
+   NAVIGATION
+=========================== */
+
+nav {
+
+    background: #050505;
+
+    border-bottom: 2px solid #00ff66;
+
+    padding: 18px;
+
+    text-align: center;
+
+    box-shadow: 0 0 15px #00ff66;
+
+}
+
+nav a {
+
+    color: #00ff66;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    margin: 0 18px;
+
+    transition: .3s;
+
+}
+
+nav a:hover {
+
+    color: white;
+
+    text-shadow:
+        0 0 5px #00ff66,
+        0 0 10px #00ff66,
+        0 0 20px #00ff66;
+
+}
+
+/* ===========================
+   MAIN CONTAINER
+=========================== */
+
+.contenedor {
+
+    width: 90%;
+    max-width: 950px;
+
+    margin: 40px auto;
+
+    padding: 35px;
+
+    background: #0b0b0b;
+
+    border: 2px solid #00ff66;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 0 20px rgba(0, 255, 100, .4);
+
+}
+
+/* ===========================
+   TITLES
+=========================== */
+
+h1 {
+
+    color: #00ff66;
+
+    text-align: center;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 0 5px #00ff66,
+        0 0 15px #00ff66;
+
+}
+
+h2 {
+
+    color: #7CFC00;
+
+    margin-top: 30px;
+
+}
+
+hr {
+
+    border: none;
+
+    border-top: 1px solid #00aa44;
+
+    margin: 25px 0;
+
+}
+
+p {
+
+    margin-bottom: 15px;
+
+    color: #b8ffb8;
+
+}
+
+/* ===========================
+   IMAGE
+=========================== */
+
+.foto-perfil {
+
+    display: block;
+
+    width: 260px;
+
+    margin: auto;
+
+    border-radius: 12px;
+
+    border: 3px solid #00ff66;
+
+    box-shadow:
+        0 0 20px #00ff66;
+
+}
+
+/* ===========================
+   SALUDO
+=========================== */
+
+#saludo {
+
+    color: #00ff66;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+}
+
+/* ===========================
+   FORM
+=========================== */
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    max-width: 600px;
+
+}
+
+label {
+
+    color: #7CFC00;
+
+}
+
+input,
+textarea {
+
+    background: #111;
+
+    color: #00ff66;
+
+    border: 1px solid #00ff66;
+
+    border-radius: 6px;
+
+    padding: 12px;
+
+    font-size: 16px;
+
+}
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #55aa55;
+
+}
+
+input:focus,
+textarea:focus {
+
+    outline: none;
+
+    box-shadow: 0 0 10px #00ff66;
+
+}
+
+input.invalido,
+textarea.invalido {
+
+    border: 2px solid red;
+
+}
+
+.error {
+
+    color: #ff4444;
+
+}
+
+/* ===========================
+   BUTTONS
+=========================== */
+
+button {
+
+    background: #00aa44;
+
+    color: black;
+
+    border: none;
+
+    padding: 14px;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    transition: .3s;
+
+}
+
+button:hover {
+
+    background: #00ff66;
+
+    box-shadow:
+        0 0 10px #00ff66,
+        0 0 25px #00ff66;
+
+}
+
+/* ===========================
+   QUIZ
+=========================== */
+
+#btn-quiz {
+
+    margin-top: 20px;
+
+}
+
+#resultado-quiz {
+
+    margin-top: 20px;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+    color: #00ff66;
+
+}
+
+/* ===========================
+   COUNTER
+=========================== */
+
+#conteo {
+
+    color: #00ff66;
+
+    font-size: 22px;
+
+    font-weight: bold;
+
+}
+
+/* ===========================
+   BACK TO TOP
+=========================== */
+
+#btn-arriba {
+
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    width: 55px;
+
+    height: 55px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    background: #00aa44;
+
+    color: black;
+
+    font-size: 24px;
+
+    cursor: pointer;
+
+    display: none;
+
+    box-shadow:
+        0 0 20px #00ff66;
+
+}
+
+#btn-arriba:hover {
+
+    background: #00ff66;
+
+}
+
+/* ===========================
+   FOOTER
+=========================== */
+
+footer {
+
+    margin-top: 40px;
+
+    padding: 25px;
+
+    background: #050505;
+
+    border-top: 2px solid #00ff66;
+
+    color: #00ff66;
+
+    text-align: center;
+
+}
