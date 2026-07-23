@@ -1,0 +1,86 @@
+# ⚡ Introduction to JavaScript
+
+> First steps into JavaScript programming and understanding how it adds interactivity to modern web pages.
+
+---
+
+# 📖 Overview
+
+This activity introduces **JavaScript**, the programming language responsible for making websites interactive.
+
+Unlike HTML, which defines the structure of a webpage, and CSS, which controls its appearance, JavaScript allows web pages to react to user actions, manipulate content dynamically, and execute programming logic directly in the browser.
+
+In this practice, I learned how to create an external JavaScript file and connect it to HTML pages, preparing my website for future interactive features.
+
+---
+
+# 🎯 Learning Objectives
+
+During this activity I learned how to:
+
+- Understand the purpose of JavaScript
+- Differentiate HTML, CSS, and JavaScript
+- Create an external JavaScript file
+- Link JavaScript to HTML
+- Execute JavaScript inside the browser
+- Prepare a website for interactive functionality
+
+---
+
+# 📂 Files
+
+```text
+01-INTRODUCTION-TO-JAVASCRIPT
+│
+├── index.html
+├── scripts.js
+├── Screenshot-01.png
+└── README.md
+```
+
+---
+
+# 🛠 Technologies Used
+
+- HTML5
+- JavaScript (ES6)
+- Visual Studio Code
+- Google Chrome
+
+---
+
+# 💡 Concepts Learned
+
+- Front-End Development
+- Client-Side Programming
+- External JavaScript Files
+- `<script>` Tag
+- Browser Execution
+- JavaScript Fundamentals
+
+---
+
+# 📚 What I Learned
+
+After completing this activity, I can:
+
+- Connect JavaScript to an HTML document.
+- Organize JavaScript code in external files.
+- Understand JavaScript's role in web development.
+- Prepare my website for dynamic behavior.
+
+---
+
+# ✅ Status
+
+**Completed ✔️**
+
+---
+
+# 🚀 Conclusion
+
+This activity marks the beginning of my JavaScript journey and establishes the foundation for building interactive and dynamic web applications throughout the rest of the course.
+
+---
+
+**Happy Coding! 🚀**
