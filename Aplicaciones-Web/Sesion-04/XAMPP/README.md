@@ -1,5 +1,8 @@
 # 🟧 XAMPP — Local Development Environment
 
+<p align="center">
+  <img src="../Assets/XAMPP%20Banner.png" alt="XAMPP Banner" width="100%">
+</p>
 > **Aplicaciones Web — Sesión 04**  
 > Universidad Politécnica de Baja California — UPBC
 
