@@ -10,9 +10,9 @@ Welcome to my **UPBC Homework** repository!
 
 This repository contains all of my academic work completed during my studies at the **Universidad Politécnica de Baja California (UPBC)**.
 
-Every subject has its own folder, making it easy to navigate through assignments, projects, reports, source code, and supporting documents.
+Every subject has its own folder, making it easy to navigate through assignments, projects, reports, source code, presentations, and supporting documents.
 
-This repository also serves as my personal learning portfolio, documenting my progress as I continue developing my skills in software engineering, web development, databases, cybersecurity, mobile applications, mathematics, and many other areas of Information Technology.
+This repository also serves as my personal learning portfolio, documenting my progress as I continue developing my skills in software engineering, web development, databases, cybersecurity, mobile applications, mathematics, critical thinking, decision-making, and many other areas of Information Technology.
 
 ---
 
@@ -27,6 +27,7 @@ Throughout this repository I will:
 - 📱 Develop mobile applications
 - 🔐 Study cybersecurity
 - 📊 Improve problem-solving skills
+- 🧠 Develop critical thinking and decision-making skills
 - 🚀 Track my academic growth
 
 ---
@@ -37,6 +38,7 @@ Throughout this repository I will:
 UPBC-Homework
 │
 ├── 📁 Aplicaciones-Web
+├── 📁 Desarrollo-del-Pensamiento-y-Toma-de-Decisiones
 ├── 📁 Programación
 ├── 📁 Matemáticas
 ├── 📁 Bases-de-Datos
@@ -52,24 +54,30 @@ UPBC-Homework
 
 ---
 
+# 📚 Current Subjects
+
+| Subject | Folder | Status |
+| --- | --- | --- |
+| 🌐 Web Applications | [Aplicaciones-Web](./Aplicaciones-Web) | 🟡 In Progress |
+| 🧠 Desarrollo del Pensamiento y Toma de Decisiones | [Desarrollo-del-Pensamiento-y-Toma-de-Decisiones](./Desarrollo-del-Pensamiento-y-Toma-de-Decisiones) | 🟡 In Progress |
+
+---
+
 # 📚 Inside Each Subject
 
-Each subject will be organized by sessions or assignments.
+Each subject will be organized by sessions, assignments, projects, and supporting evidence.
 
 Example:
 
 ```text
-Aplicaciones-Web
+Subject-Name
 │
-├── Sesion-01
-│   ├── index.html
-│   ├── foto.jpg
-│   ├── Evidencia.pdf
-│   └── README.md
+├── assets
+│   └── images-and-supporting-material
 │
-├── Sesion-02
-│
-└── ...
+├── 01-Assignment.md
+├── 02-Project.md
+└── README.md
 ```
 
 ---
@@ -99,6 +107,7 @@ During my university career I will work with technologies such as:
 | Subject | Status |
 |----------|--------|
 | 🌐 Web Applications | 🟡 In Progress |
+| 🧠 Desarrollo del Pensamiento y Toma de Decisiones | 🟡 In Progress |
 | 💻 Programming | 🟡 In Progress |
 | 📊 Mathematics | 🟡 In Progress |
 | 🗄 Databases | 🟡 In Progress |
@@ -113,10 +122,11 @@ For every assignment I follow this process:
 
 1. 📖 Study the theory.
 2. 💡 Understand the concepts.
-3. 💻 Complete the assignment.
-4. 🧪 Test my solution.
-5. 📤 Upload it to GitHub.
-6. ✅ Keep everything organized.
+3. 🧠 Analyze the problem.
+4. 💻 Complete the assignment or technical solution.
+5. 🧪 Review and test the result when applicable.
+6. 📤 Upload it to GitHub.
+7. ✅ Keep everything organized.
 
 ---
 
@@ -127,6 +137,7 @@ For every assignment I follow this process:
 - [ ] Upload reports
 - [ ] Upload presentations
 - [ ] Upload source code
+- [ ] Add academic evidence and supporting assets
 - [ ] Keep repository organized
 - [ ] Continue learning every semester
 
