@@ -49,8 +49,6 @@ Cuando una persona compra productos en Walmart, el sistema:
 - Actualiza el inventario.
 - Genera el ticket automáticamente.
 
-![Ejemplos TPS - Walmart y Cajero Automático](./assets/images/page-03.webp)
-
 ### Cajero Automático (ATM)
 
 Cuando una persona retira dinero:
@@ -66,8 +64,6 @@ Cuando se realiza un pedido:
 - El sistema manda la orden a cocina.
 - Calcula el precio.
 - Guarda la venta del día.
-
-![Ejemplo TPS - McDonald's](./assets/images/page-04.webp)
 
 ## ¿Cómo crear un TPS?
 
@@ -103,7 +99,7 @@ Los gerentes pueden revisar:
 - Productos más vendidos.
 - Ganancias.
 
-![Ejemplo MIS - Coca-Cola](./assets/images/page-05.webp)
+![Página original del PDF - Ejemplo MIS Coca-Cola](./assets/images/page-05.webp)
 
 ### Sistema Escolar
 
@@ -120,8 +116,6 @@ El director puede revisar:
 - Número de pacientes.
 - Medicamentos usados.
 - Horarios médicos.
-
-![Ejemplos MIS - Sistema Escolar y Hospital](./assets/images/page-06.webp)
 
 ## ¿Cómo crear un MIS?
 
@@ -156,8 +150,6 @@ El sistema analiza:
 - Riesgo financiero.
 - Posible aprobación de un préstamo.
 
-![Ejemplo DSS - Banco](./assets/images/page-07.webp)
-
 ### Hospital Inteligente
 
 El DSS ayuda a los médicos a:
@@ -175,8 +167,6 @@ El sistema analiza:
 - Rutas.
 - Costos.
 - Mejor ruta de vuelo.
-
-![Ejemplos DSS - Hospital Inteligente y Aerolíneas](./assets/images/page-08.webp)
 
 ## ¿Cómo crear un DSS?
 
@@ -212,8 +202,6 @@ Toyota utiliza un ERP para:
 - Empleados.
 - Ventas.
 
-![Ejemplo ERP - Toyota](./assets/images/page-09.webp)
-
 ### Amazon
 
 Amazon utiliza ERP para:
@@ -231,8 +219,6 @@ El ERP puede controlar:
 - Pacientes.
 - Pagos.
 - Recursos humanos.
-
-![Ejemplos ERP - Amazon y Hospital](./assets/images/page-10.webp)
 
 ## ¿Cómo crear un ERP?
 
@@ -255,7 +241,7 @@ El ERP puede controlar:
 
 # Resumen
 
-![Resumen visual TPS, MIS, DSS y ERP](./assets/images/page-11.webp)
+![Página original del PDF - Resumen TPS, MIS, DSS y ERP](./assets/images/page-11.webp)
 
 | Sistema | Función principal |
 | --- | --- |
