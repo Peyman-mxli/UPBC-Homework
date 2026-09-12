@@ -6,7 +6,7 @@
 
 This folder contains my academic work for the subject **Análisis y Diseño de Software** at the **Universidad Politécnica de Baja California (UPBC)**.
 
-The material in this section documents concepts, assignments, examples, diagrams, and visual evidence related to software analysis and design.
+The material in this section documents concepts, assignments, examples, and visual evidence related to software analysis and design.
 
 ## Academic Information
 
@@ -27,6 +27,18 @@ The material in this section documents concepts, assignments, examples, diagrams
 | --- | --- | --- |
 | 01 | [Tipos de Sistemas de Información](./01-Tipos-de-Sistemas-de-Informacion.md) | Completed |
 
+## Original Visual Evidence
+
+The following images were taken directly from the original academic PDF.
+
+### MIS Example — Coca-Cola
+
+![MIS - Coca-Cola](./assets/images/page-05.webp)
+
+### TPS, MIS, DSS and ERP Summary
+
+![Resumen visual TPS, MIS, DSS y ERP](./assets/images/page-11.webp)
+
 ## Repository Structure
 
 ```text
@@ -35,14 +47,7 @@ Analisis-y-Diseno-de-Software
 ├── assets
 │   └── images
 │       ├── page-01.webp
-│       ├── page-03.webp
-│       ├── page-04.webp
 │       ├── page-05.webp
-│       ├── page-06.webp
-│       ├── page-07.webp
-│       ├── page-08.webp
-│       ├── page-09.webp
-│       ├── page-10.webp
 │       └── page-11.webp
 │
 ├── 01-Tipos-de-Sistemas-de-Informacion.md
@@ -62,4 +67,4 @@ Analisis-y-Diseno-de-Software
 
 ## Source Material
 
-The images in this folder were extracted directly from the original university PDF so the visual evidence remains consistent with the submitted academic document.
+The visual evidence in this folder was extracted directly from the original university PDF so the repository preserves the appearance of the submitted academic work.
