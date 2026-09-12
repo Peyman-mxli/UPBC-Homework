@@ -39,6 +39,7 @@ UPBC-Homework
 │
 ├── 📁 Aplicaciones-Web
 ├── 📁 Desarrollo-del-Pensamiento-y-Toma-de-Decisiones
+├── 📁 Proyecto-Integrador-UACS
 ├── 📁 Programación
 ├── 📁 Matemáticas
 ├── 📁 Bases-de-Datos
@@ -60,6 +61,14 @@ UPBC-Homework
 | --- | --- | --- |
 | 🌐 Web Applications | [Aplicaciones-Web](./Aplicaciones-Web) | 🟡 In Progress |
 | 🧠 Desarrollo del Pensamiento y Toma de Decisiones | [Desarrollo-del-Pensamiento-y-Toma-de-Decisiones](./Desarrollo-del-Pensamiento-y-Toma-de-Decisiones) | 🟡 In Progress |
+
+---
+
+# 🧩 Integrative Projects
+
+| Project | Folder | Status |
+| --- | --- | --- |
+| University Access Control System (UACS) | [Proyecto-Integrador-UACS](./Proyecto-Integrador-UACS) | 🟡 In Progress |
 
 ---
 
