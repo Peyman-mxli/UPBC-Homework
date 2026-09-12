@@ -1,4 +1,4 @@
-![Desarrollo del Pensamiento y Toma de Decisiones](./assets/course-info.svg)
+![Información académica del curso](./assets/course-info.webp)
 
 # Desarrollo del Pensamiento y Toma de Decisiones
 
@@ -45,10 +45,11 @@ This subject connects analytical thinking with real engineering situations and s
 Desarrollo-del-Pensamiento-y-Toma-de-Decisiones
 │
 ├── assets
+│   ├── course-info.webp
 │   └── course-info.svg
 │
 ├── 01-Trabajo-en-Equipo-Proyecto-Integrador.md
-│
+├── 02-Proyecto-Integrador-Reporte-II-Febrero-UACS.md
 └── README.md
 ```
 
@@ -57,12 +58,15 @@ Desarrollo-del-Pensamiento-y-Toma-de-Decisiones
 | No. | Activity | Status |
 | --- | --- | --- |
 | 01 | [Trabajo en equipo – Proyecto integrador](./01-Trabajo-en-Equipo-Proyecto-Integrador.md) | Completed |
+| 02 | [Proyecto Integrador – Reporte II (Febrero) – UACS](./02-Proyecto-Integrador-Reporte-II-Febrero-UACS.md) | Completed |
 
-## Current Integrative Project Topic
+## Current Integrative Project
 
-**Falta de un sistema de registro de entrada y salida de estudiantes en la universidad**
+### University Access Control System (UACS)
 
-The current activity analyzes the lack of a centralized digital access-record system for students and proposes a technical solution using technologies such as QR, NFC, web applications, databases, authentication, and administrative reporting.
+The current integrative project focuses on the development of a digital university access-control system designed to record and monitor the entry and exit of students, faculty, and administrative personnel.
+
+The project includes work on authentication, access records, database design, web interface development, history, reports, and monitoring.
 
 ## Skills Developed
 
@@ -73,15 +77,18 @@ The current activity analyzes the lack of a centralized digital access-record sy
 - Risk and impact evaluation
 - Solution design
 - Technical documentation
+- Database planning
+- Interface design
 - Team collaboration
 - Professional presentation
 
 ## Checklist
 
 - [x] Create subject folder.
-- [x] Add course information asset.
+- [x] Add the original course information image.
 - [x] Create subject README.
 - [x] Document the first integrative-project activity.
+- [x] Add Project Integrator Report II for February.
 - [ ] Add future assignments.
 - [ ] Add reports and presentations.
 - [ ] Add supporting documents and evidence.
