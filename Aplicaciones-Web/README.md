@@ -10,7 +10,7 @@ Welcome to the **Web Applications** course folder.
 
 This directory contains all the work completed throughout the course, including practical exercises, laboratory activities, homework, projects, reports, and source code.
 
-During this course, I will learn the fundamentals of modern web development, starting with HTML5 and continuing with CSS3, JavaScript, responsive design, and client-side programming.
+During this course, I will learn the fundamentals of modern web development, service-oriented applications, SOA concepts, cloud models, APIs, and software architecture practices used in modern web systems.
 
 This repository documents my learning journey and demonstrates my progress in becoming a Full Stack Software Engineer.
 
@@ -33,7 +33,11 @@ Throughout this course I will learn:
 - 🔗 Hyperlinks
 - 📦 Web Hosting
 - 🔒 HTTP & HTTPS
-- 🚀 Front-End Development
+- 🔌 APIs and Service-Oriented Web Applications
+- 🏗️ SOA Fundamentals
+- ☁️ Cloud Models: IaaS, PaaS and SaaS
+- 🐳 Containers and Microservices
+- 🚀 Front-End and Web Application Development
 
 ---
 
@@ -47,6 +51,7 @@ Aplicaciones-Web
 ├── Sesion-03
 ├── Sesion-04
 ├── Sesion-05
+├── Sesion-06
 ├── Proyecto-Final
 └── README.md
 ```
@@ -55,33 +60,31 @@ Aplicaciones-Web
 
 # 📚 Session Organization
 
-Each session contains its own materials.
-
-Example:
-
-```text
-Sesion-01
-│
-├── README.md
-├── index.html
-├── foto.jpg
-├── Evidencia.pdf
-└── Screenshots
-```
+Each session contains its own materials, explanations, assignments, evidence, and source code when applicable.
 
 ---
 
-# 🛠 Technologies
+# 🛠 Technologies and Concepts
 
 Throughout this course I will work with:
 
 - HTML5
 - CSS3
 - JavaScript
+- PHP
+- MySQL
+- APIs
+- HTTP / HTTPS
+- JSON / XML
+- OpenAPI / Swagger
+- SOA
+- Docker
+- Cloud Computing
+- Google Cloud Run
+- AWS Elastic Beanstalk
 - Visual Studio Code
 - Git
 - GitHub
-- Google Chrome Developer Tools
 
 ---
 
@@ -89,12 +92,29 @@ Throughout this course I will work with:
 
 | Session | Topic | Status |
 |----------|-------------------------------|---------|
-| 01 | Introduction to HTML5 | ✅ Completed |
-| 02 | CSS Fundamentals | ⏳ Coming Soon |
-| 03 | Layout and Positioning | ⏳ Coming Soon |
-| 04 | JavaScript Basics | ⏳ Coming Soon |
-| 05 | DOM Manipulation | ⏳ Coming Soon |
-| Final Project | Complete Website | ⏳ Future |
+| 01 | Introduction to Web Applications | ✅ Completed |
+| 02 | Web Development Fundamentals | ✅ Completed |
+| 03 | Web Application Practice | ✅ Completed |
+| 04 | Web Application Development | ✅ Completed |
+| 05 | MVC — Model, View, Controller | ✅ Completed |
+| 06 | MediLink — Services, SOA and Cloud Strategy | ✅ Completed |
+| Final Project | Complete Web Application | ⏳ Future |
+
+---
+
+# ☁️ Session 06 — MediLink
+
+The latest session contains the case study **MediLink - Red de Citas Médicas Integradas**, focused on:
+
+- Interoperability between Java, C# and JSON-based services.
+- Service Contracts with OpenAPI / Swagger.
+- SOA roles: Service Provider, Service Requester and Service Registry.
+- Statelessness and horizontal scalability.
+- IaaS vs PaaS.
+- Microservices and Docker.
+- High availability and automatic scaling.
+
+➡️ **[Open Session 06 — MediLink](./Sesion-06/README.md)**
 
 ---
 
@@ -104,21 +124,10 @@ For every assignment I will:
 
 1. 📖 Read the lesson.
 2. 💡 Understand the concepts.
-3. 💻 Write the code.
-4. 🧪 Test everything in the browser.
+3. 💻 Develop the solution.
+4. 🧪 Test or validate the result.
 5. 📤 Upload the assignment to GitHub.
 6. ✅ Keep my work organized.
-
----
-
-# ✅ Course Checklist
-
-- [ ] Complete every session
-- [ ] Finish every homework
-- [ ] Upload every report
-- [ ] Upload every source code
-- [ ] Complete the final project
-- [ ] Keep the repository organized
 
 ---
 
@@ -130,17 +139,16 @@ For every assignment I will:
 
 🏫 Universidad Politécnica de Baja California (UPBC)
 
-📚 Course:
-Web Applications
+📚 Course: Web Applications / Aplicaciones Web Orientadas a Servicios
 
-🌍 Originally from Iran 🇮🇷
+🌍 Originally from Iran 🇮🇷  
 Currently living in Mexico 🇲🇽
 
 ---
 
 # 🚀 Goal
 
-My goal is to master modern web development by building professional websites and applications using HTML, CSS, JavaScript, and other web technologies.
+My goal is to master modern web development and software architecture by building professional applications and understanding how distributed web systems communicate, scale, and operate in cloud environments.
 
 Every assignment in this folder represents another step toward becoming a professional Software Engineer.
 
@@ -149,7 +157,5 @@ Every assignment in this folder represents another step toward becoming a profes
 # ⭐ Thank You
 
 Thank you for visiting my **Web Applications** course repository.
-
-I hope this repository reflects my continuous learning, dedication, and passion for software development.
 
 **Happy Coding! 🚀**
