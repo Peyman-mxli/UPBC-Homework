@@ -17,12 +17,18 @@ El proyecto propone el desarrollo de un sistema digital para registrar, consulta
 
 | No. | Documento | Estado |
 | --- | --- | --- |
+| 01 | [Introducción al Proyecto Integrador](./01-Introduccion-al-Proyecto-Integrador/README.md) | Completado |
+| 01A | [Actividad — Concepto, objetivo, estructura y pasos](./01-Introduccion-al-Proyecto-Integrador/Proyecto-Integrador-Actividad.md) | Completado |
 | 02 | [Proyecto Integrador – Reporte II (Febrero)](./02-Proyecto-Integrador-Reporte-II-Febrero-UACS.md) | Completado |
 
 ## Estructura
 
 ```text
 Proyecto-Integrador-UACS
+│
+├── 01-Introduccion-al-Proyecto-Integrador/
+│   ├── README.md
+│   └── Proyecto-Integrador-Actividad.md
 │
 ├── 02-Proyecto-Integrador-Reporte-II-Febrero-UACS.md
 └── README.md
