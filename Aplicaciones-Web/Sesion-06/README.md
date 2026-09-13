@@ -160,9 +160,9 @@ El uso de servicios interoperables permite integrar tecnologías distintas sin r
 
 ## 📄 Entrega
 
-El documento completo de la actividad está incluido en esta carpeta:
+La versión completa de la tarea está incluida en esta carpeta en formato Markdown:
 
-**[MediLink_Aplicaciones_Web_Orientadas_a_Servicios.docx](./MediLink_Aplicaciones_Web_Orientadas_a_Servicios.docx)**
+**[MediLink-Tarea.md](./MediLink-Tarea.md)**
 
 ---
 
