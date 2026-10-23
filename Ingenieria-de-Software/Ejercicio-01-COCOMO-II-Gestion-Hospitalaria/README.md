@@ -27,6 +27,7 @@ La reducción del calendario es de **25 %**, pero el esfuerzo estimado crece **4
 
 ## Archivos de la entrega
 
+- [Reporte_COCOMO_II_Hospitalario.docx](./Reporte_COCOMO_II_Hospitalario.docx) — versión Word editable del informe con estructura y títulos en azul; el documento Word diseñado con banner UPBC también se entrega en la conversación.
 - [REPORTE_COMPLETO.md](./REPORTE_COMPLETO.md) — enunciado, justificaciones, datos, desarrollo matemático, costos, SCED, conclusiones y referencias.
 - [INSTRUCCIONES_CALCULADORA.md](./INSTRUCCIONES_CALCULADORA.md) — campos exactos de la calculadora y recomendaciones para capturas auténticas.
 - [calcular_cocomo_ii.py](./calcular_cocomo_ii.py) — implementación reproducible de las fórmulas.
