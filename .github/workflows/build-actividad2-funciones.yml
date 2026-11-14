@@ -1,0 +1,71 @@
+name: Build UPBC Actividad 2 Word and PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/build-actividad2-funciones.yml
+      - Bases-de-Datos-Avanzadas/Actividad-2-Funciones-Meses-y-Libros/Actividad_2_Funciones_Meses_y_Libros_UPBC.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-documents:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install document conversion tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils fonts-liberation
+          python -m pip install python-docx
+      - name: Prepare UPBC report style and campus banner
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from docx import Document
+          from docx.shared import Pt, Inches, RGBColor
+          import subprocess
+          d=Path('Bases-de-Datos-Avanzadas/Actividad-2-Funciones-Meses-y-Libros')
+          src=d/'Actividad_2_Funciones_Meses_y_Libros_UPBC.md'
+          old=Path('Bases-de-Datos-Avanzadas/Actividad1_LUIGIS_Pizzeria_Reporte_UPBC.pdf')
+          subprocess.run(['pdfimages','-f','1','-l','1','-png',str(old),str(d/'campus')],check=True)
+          assert (d/'campus-000.png').exists()
+          (d/'_build.md').write_text('![Universidad Politecnica de Baja California](campus-000.png){ width=6.5in }\n\n'+src.read_text(encoding='utf-8'),encoding='utf-8')
+          doc=Document()
+          sec=doc.sections[0]
+          sec.top_margin=Inches(.7);sec.bottom_margin=Inches(.7)
+          sec.left_margin=Inches(.8);sec.right_margin=Inches(.8)
+          s=doc.styles['Normal'];s.font.name='Liberation Sans';s.font.size=Pt(9)
+          s.font.color.rgb=RGBColor(23,51,80)
+          for name,size,color in [('Heading 1',16,RGBColor(98,49,126)),('Heading 2',11,RGBColor(40,111,158))]:
+              st=doc.styles[name];st.font.name='Liberation Sans';st.font.bold=True
+              st.font.size=Pt(size);st.font.color.rgb=color
+          doc.save('/tmp/upbc-actividad2-style.docx')
+          PY
+      - name: Generate and verify Word and PDF
+        shell: bash
+        run: |
+          dir='Bases-de-Datos-Avanzadas/Actividad-2-Funciones-Meses-y-Libros'
+          stem='Actividad_2_Funciones_Meses_y_Libros_UPBC'
+          pandoc "$dir/_build.md" --from=markdown --to=docx --resource-path="$dir" --reference-doc=/tmp/upbc-actividad2-style.docx -o "$dir/$stem.docx"
+          libreoffice -env:UserInstallation=file:///tmp/lo_upbc_actividad2 --headless --convert-to pdf --outdir "$dir" "$dir/$stem.docx"
+          test -s "$dir/$stem.docx" && test -s "$dir/$stem.pdf"
+          rm -f "$dir/_build.md" "$dir/campus-000.png" "$dir/campus-001.png"
+      - name: Commit generated documents
+        shell: bash
+        run: |
+          dir='Bases-de-Datos-Avanzadas/Actividad-2-Funciones-Meses-y-Libros'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dir/Actividad_2_Funciones_Meses_y_Libros_UPBC.docx" "$dir/Actividad_2_Funciones_Meses_y_Libros_UPBC.pdf"
+          if git diff --cached --quiet; then
+            echo 'Documents already match'
+          else
+            git commit -m 'Publish Actividad 2 UPBC Word and PDF'
+            git push origin HEAD:main
+          fi
