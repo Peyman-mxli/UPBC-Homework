@@ -1,0 +1,84 @@
+name: Build Empresa activity Word and PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/build-empresa-documents.yml
+      - Bases-de-Datos-Avanzadas/Actividad-C-Trigger-Empleados-Empresa/Actividad_C_Trigger_Empleados_Empresa_Reporte.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install report conversion tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils fonts-liberation
+          python -m pip install python-docx
+      - name: Prepare a UPBC-styled report with original campus banner
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from docx import Document
+          from docx.shared import Pt, Inches, RGBColor
+          d = Path('Bases-de-Datos-Avanzadas/Actividad-C-Trigger-Empleados-Empresa')
+          source = d / 'Actividad_C_Trigger_Empleados_Empresa_Reporte.md'
+          old_pdf = Path('Bases-de-Datos-Avanzadas/Actividad1_LUIGIS_Pizzeria_Reporte_UPBC.pdf')
+          import subprocess
+          subprocess.run(['pdfimages', '-f', '1', '-l', '1', '-png', str(old_pdf), str(d / 'campus')], check=True)
+          banner = d / 'campus-000.png'
+          assert banner.is_file(), 'University reference banner was not extracted'
+          content = source.read_text(encoding='utf-8')
+          (d / '_build.md').write_text('![Universidad Politécnica de Baja California](campus-000.png){ width=6.5in }\n\n' + content, encoding='utf-8')
+          reference = Document()
+          section = reference.sections[0]
+          section.top_margin = Inches(.75)
+          section.bottom_margin = Inches(.7)
+          section.left_margin = Inches(.8)
+          section.right_margin = Inches(.8)
+          body = reference.styles['Normal']
+          body.font.name = 'Liberation Sans'
+          body.font.size = Pt(9.5)
+          body.font.color.rgb = RGBColor(26, 49, 77)
+          for level, size, color in [('Heading 1', 17, RGBColor(90, 56, 126)), ('Heading 2', 12, RGBColor(42, 109, 159))]:
+              style = reference.styles[level]
+              style.font.name = 'Liberation Sans'
+              style.font.size = Pt(size)
+              style.font.bold = True
+              style.font.color.rgb = color
+          reference.save('/tmp/empresa-upbc-reference.docx')
+          PY
+      - name: Generate editable DOCX and printable PDF
+        shell: bash
+        run: |
+          dir='Bases-de-Datos-Avanzadas/Actividad-C-Trigger-Empleados-Empresa'
+          name='Actividad_C_Trigger_Empleados_Empresa_UPBC'
+          pandoc "$dir/_build.md" --from=markdown --to=docx \
+            --resource-path="$dir" --reference-doc=/tmp/empresa-upbc-reference.docx \
+            -o "$dir/$name.docx"
+          libreoffice -env:UserInstallation=file:///tmp/empresa_lo_profile --headless \
+            --convert-to pdf --outdir "$dir" "$dir/$name.docx"
+          test -s "$dir/$name.docx"
+          test -s "$dir/$name.pdf"
+          rm -f "$dir/_build.md" "$dir/campus-000.png" "$dir/campus-001.png"
+      - name: Commit generated Word and PDF to the same folder
+        shell: bash
+        run: |
+          dir='Bases-de-Datos-Avanzadas/Actividad-C-Trigger-Empleados-Empresa'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dir/Actividad_C_Trigger_Empleados_Empresa_UPBC.docx" "$dir/Actividad_C_Trigger_Empleados_Empresa_UPBC.pdf"
+          if git diff --cached --quiet; then
+            echo 'Generated reports already current.'
+          else
+            git commit -m 'Publish Empresa trigger activity Word and PDF reports'
+            git push origin HEAD:main
+          fi
