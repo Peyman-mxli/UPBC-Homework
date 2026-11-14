@@ -41,9 +41,9 @@ El parámetro `@fecha DATETIME = NULL` permite solicitar la fecha actual del ser
 
 | Llamada | Resultado esperado |
 |---|---|
-| `dbo.f_nombreMes('2026-01-15')` | Enero |
-| `dbo.f_nombreMes('2026-03-15')` | Marzo |
-| `dbo.f_nombreMes('2026-11-13')` | Noviembre |
+| `dbo.f_nombreMes('20260115')` | Enero |
+| `dbo.f_nombreMes('20260315')` | Marzo |
+| `dbo.f_nombreMes('20261113')` | Noviembre |
 | `dbo.f_nombreMes(DEFAULT)` | Mes actual del servidor |
 
 ## 4. ¿Por qué se utiliza DEFAULT?
@@ -152,9 +152,9 @@ END;
 GO
 
 -- 5. Consultar el nombre del mes.
-SELECT dbo.f_nombreMes('2026-01-15') AS MesEnEspanol; -- Enero
-SELECT dbo.f_nombreMes('2026-03-15') AS MesEnEspanol; -- Marzo
-SELECT dbo.f_nombreMes('2026-11-13') AS MesEnEspanol; -- Noviembre
+SELECT dbo.f_nombreMes('20260115') AS MesEnEspanol; -- Enero
+SELECT dbo.f_nombreMes('20260315') AS MesEnEspanol; -- Marzo
+SELECT dbo.f_nombreMes('20261113') AS MesEnEspanol; -- Noviembre
 
 -- 6. Para usar el valor predeterminado, enviar DEFAULT.
 SELECT dbo.f_nombreMes(DEFAULT) AS MesActual;
