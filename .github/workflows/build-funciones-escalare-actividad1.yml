@@ -1,0 +1,74 @@
+name: Build Funciones Escalares Activity 1 Word and PDF
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - .github/workflows/build-funciones-escalare-actividad1.yml
+      - Bases-de-Datos-Avanzadas/Actividad-1-Funciones-Escalares-Triangulo-Mes/Actividad_1_Funciones_Triangulo_y_Mes_Empresa_UPBC.md
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install conversion tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends pandoc libreoffice-writer poppler-utils fonts-liberation
+          python -m pip install python-docx
+      - name: Prepare report and UPBC styling
+        shell: bash
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          from docx import Document
+          from docx.shared import Pt, Inches, RGBColor
+          import subprocess
+          d=Path('Bases-de-Datos-Avanzadas/Actividad-1-Funciones-Escalares-Triangulo-Mes')
+          source=d/'Actividad_1_Funciones_Triangulo_y_Mes_Empresa_UPBC.md'
+          reference_pdf=Path('Bases-de-Datos-Avanzadas/Actividad1_LUIGIS_Pizzeria_Reporte_UPBC.pdf')
+          subprocess.run(['pdfimages','-f','1','-l','1','-png',str(reference_pdf),str(d/'campus')],check=True)
+          banner=d/'campus-000.png'
+          assert banner.exists(), 'Campus banner was not extracted'
+          prefix='![Universidad Politécnica de Baja California](campus-000.png){ width=6.5in }\n\n'
+          (d/'_build.md').write_text(prefix+source.read_text(encoding='utf-8'),encoding='utf-8')
+          ref=Document()
+          sec=ref.sections[0]
+          sec.top_margin=Inches(.7);sec.bottom_margin=Inches(.7)
+          sec.left_margin=Inches(.75);sec.right_margin=Inches(.75)
+          normal=ref.styles['Normal'];normal.font.name='Liberation Sans';normal.font.size=Pt(9)
+          normal.font.color.rgb=RGBColor(29,54,82)
+          for heading,size,col in [('Heading 1',17,RGBColor(98,49,126)),('Heading 2',12,RGBColor(39,106,156))]:
+              st=ref.styles[heading];st.font.name='Liberation Sans'
+              st.font.size=Pt(size);st.font.bold=True;st.font.color.rgb=col
+          ref.save('/tmp/upbc-funciones-reference.docx')
+          PY
+      - name: Convert Markdown to DOCX and PDF
+        shell: bash
+        run: |
+          dir='Bases-de-Datos-Avanzadas/Actividad-1-Funciones-Escalares-Triangulo-Mes'
+          name='Actividad_1_Funciones_Triangulo_y_Mes_Empresa_UPBC'
+          pandoc "$dir/_build.md" --from=markdown --to=docx --resource-path="$dir" --reference-doc=/tmp/upbc-funciones-reference.docx -o "$dir/$name.docx"
+          libreoffice -env:UserInstallation=file:///tmp/funciones_lo --headless --convert-to pdf --outdir "$dir" "$dir/$name.docx"
+          test -s "$dir/$name.docx"
+          test -s "$dir/$name.pdf"
+          rm -f "$dir/_build.md" "$dir/campus-000.png" "$dir/campus-001.png"
+      - name: Publish documents on main
+        shell: bash
+        run: |
+          dir='Bases-de-Datos-Avanzadas/Actividad-1-Funciones-Escalares-Triangulo-Mes'
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add "$dir/Actividad_1_Funciones_Triangulo_y_Mes_Empresa_UPBC.docx" "$dir/Actividad_1_Funciones_Triangulo_y_Mes_Empresa_UPBC.pdf"
+          if git diff --cached --quiet; then
+            echo 'Already current'
+          else
+            git commit -m 'Publish Activity 1 Funciones Escalares Word and PDF'
+            git push origin HEAD:main
+          fi
